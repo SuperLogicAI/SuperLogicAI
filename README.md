@@ -8,4 +8,4 @@ I'm Josh, AI transformation partner and forward deployed engineer of Super Logic
 
 The open source work is pinned below, free to take. If you want that same leverage built into your own business, [let's talk](https://superlogicai.com) about where you are now and what the shortest path to it looks like.
 
-<img src="logo.svg?v=2" alt="Super Logic AI" width="560">
+<img src="logo.svg?v=3" alt="Super Logic AI" width="560">
