@@ -1,6 +1,6 @@
 <p>
-  <a href="https://superlogicai.com/"><img src="AI.gif" alt="Super Logic AI"></a>
-  <img src="tagline.svg" alt="//Delivering Open Source Tools for Developers and Builders. //Building Custom Closed Source for Clients and Industry Partners">
+  <a href="https://superlogicai.com/"><img src="AI.gif?v=2" alt="Super Logic AI"></a>
+  <img src="tagline.svg?v=2" alt="//Delivering Open Source Tools for Developers and Builders. //Building Custom Closed Source for Clients and Industry Partners">
 </p>
 
 Most AI tooling is built for labs. I build for the lean shop down the street or the ambitious business owners looking for the unfair advantage- and no patience for a six-month pilot.
