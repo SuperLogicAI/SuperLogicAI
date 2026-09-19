@@ -1,6 +1,10 @@
 #!/bin/sh
 # Rebuild AI.gif = AI-base.gif (1920x680, no text) + tagline.svg burned onto the bottom.
-# Edit tagline.svg, run this, bump the ?v= in README.md, push.
+# Edit tagline.svg, run this, push, WAIT for raw.githubusercontent to serve the new
+# bytes (~30s-2min), THEN bump the ?v= in README.md and push again. Bumping in the
+# same push races the CDN: GitHub caches the stale file under the new URL and you
+# have to bump a second time. Check with:
+#   curl -s "https://raw.githubusercontent.com/SuperLogicAI/SuperLogicAI/main/logo.svg?cb=$RANDOM" | head -1
 # ponytail: the tagline is baked into the GIF because two stacked images on GitHub
 # always leave a few px of line-box gap and the sanitizer strips the CSS that fixes it.
 set -e
