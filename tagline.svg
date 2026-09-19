@@ -1,10 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="180" viewBox="0 0 1920 180" role="img" aria-label="//Delivering Open Source Tools for Developers and Builders. //Building Custom Closed Source for Clients and Industry Partners">
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="180" viewBox="0 0 1920 180" role="img" aria-label="//Delivering Open Source Tools for Developers and Builders //Building Custom Closed Source for Clients and Industry Partners">
+  <style>
+    .t { fill: #F5F0E8 }
+    @media (prefers-color-scheme: light) { .t { fill: #1A1A1A } }
+  </style>
   <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="42" font-weight="600">
     <text x="20" y="72">
-      <tspan fill="#00D09B" font-weight="800">/</tspan><tspan fill="#FF7E1B" font-weight="800">/</tspan><tspan fill="#F5F0E8">&#160;&#160;Delivering Open Source Tools for Developers and Builders.</tspan>
+      <tspan fill="#00D09B" font-weight="800">/</tspan><tspan fill="#FF7E1B" font-weight="800">/</tspan><tspan class="t">&#160;&#160;Delivering Open Source Tools for Developers and Builders</tspan>
     </text>
     <text x="20" y="141">
-      <tspan fill="#00D09B" font-weight="800">/</tspan><tspan fill="#FF7E1B" font-weight="800">/</tspan><tspan fill="#F5F0E8">&#160;&#160;Building Custom Closed Source for Clients and Industry Partners</tspan>
+      <tspan fill="#00D09B" font-weight="800">/</tspan><tspan fill="#FF7E1B" font-weight="800">/</tspan><tspan class="t">&#160;&#160;Building Custom Closed Source for Clients and Industry Partners</tspan>
     </text>
   </g>
 </svg>
