@@ -1,22 +1,19 @@
 #!/bin/sh
-# Rebuild AI.gif = AI-base.gif (1920x680, no text) + tagline.svg burned onto the bottom.
-# Edit tagline.svg, run this, push, WAIT for raw.githubusercontent to serve the new
+# Rebuild AI.gif = AI-base.gif (1920x680, no text) + tagline.png burned onto the bottom.
+# tagline.png is the top 200px of the brand animation frame, so the type matches the GIF.
+#
+# Swap tagline.png, run this, push, WAIT for raw.githubusercontent to serve the new
 # bytes (~30s-2min), THEN bump the ?v= in README.md and push again. Bumping in the
 # same push races the CDN: GitHub caches the stale file under the new URL and you
 # have to bump a second time. Check with:
-#   curl -s "https://raw.githubusercontent.com/SuperLogicAI/SuperLogicAI/main/logo.svg?cb=$RANDOM" | head -1
+#   curl -s "https://raw.githubusercontent.com/SuperLogicAI/SuperLogicAI/main/AI.gif?cb=$RANDOM" | head -c 16 | xxd
 # ponytail: the tagline is baked into the GIF because two stacked images on GitHub
 # always leave a few px of line-box gap and the sanitizer strips the CSS that fixes it.
 set -e
 cd "$(dirname "$0")"
-CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
-"$CHROME" --headless --disable-gpu --allow-file-access-from-files --hide-scrollbars \
-  --default-background-color=000000ff --window-size=1920,180 \
-  --screenshot=/tmp/tagline.png "file://$PWD/tagline.svg"
-
-ffmpeg -y -i AI-base.gif -i /tmp/tagline.png -filter_complex \
-  "[0:v]pad=1920:860:0:0:black[bg];[bg][1:v]overlay=0:680[v];[v]split[a][b];\
+ffmpeg -y -i AI-base.gif -i tagline.png -filter_complex \
+  "[0:v]pad=1920:880:0:0:black[bg];[bg][1:v]overlay=0:680[v];[v]split[a][b];\
    [a]palettegen=stats_mode=full[p];[b][p]paletteuse=dither=sierra2_4a" \
   -loop 0 AI.gif
 
